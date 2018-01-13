@@ -2,6 +2,7 @@
 package org.usfirst.frc.team6078.robot;
 
 import org.opencv.core.Mat;
+
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
@@ -11,7 +12,7 @@ import org.opencv.imgproc.Imgproc;
 import org.usfirst.frc.team6078.robot.commands.*;
 import org.usfirst.frc.team6078.robot.subsystems.Constants;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team6078.robot.subsystems.ExampleSubsystem;
+
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
@@ -48,7 +49,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 public class Robot extends IterativeRobot {
 
 	//Don't think we need this but I'm too afraid to remove it so I'm just gonna leave it here -Josh 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 
 	//Auto autonomous checker
@@ -66,10 +66,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		//Delete "ExampleCommand" and make sure everything still works, then commit the deletions
-		chooser.addDefault("Default Auto", new ExampleCommand());
-		chooser.addDefault("TestAuton", new MoverCommand());
-		//SmartDashboard.putData("Auto mode", chooser);
 		
       		
 		//Enables Camera 0 on SmartDashboard

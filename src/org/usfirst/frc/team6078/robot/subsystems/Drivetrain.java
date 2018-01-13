@@ -19,6 +19,8 @@ public class Drivetrain {
 	
 	}
 	
+	
+	//For auton at the moment, maybe get this working for teleop?
 	public static void alernateDrive(int cet) {
 			// -----> Don't set cet greater than 1 or less than -1 <--------
 		
@@ -60,6 +62,7 @@ public class Drivetrain {
 			
 	}
 
+	//Change this to a while loop dummy, that's why it only works once
 	 public static void turboButton() {
 		
 		boolean buttonValue;
@@ -79,6 +82,8 @@ public class Drivetrain {
 		
 	}
 	
+	 
+	 //If Handicap is added back in will this work?
 	public static void switchDirection() {
 		
 		boolean buttonValue3;
@@ -94,19 +99,5 @@ public class Drivetrain {
 		
 	}
 	
-	public static void servoButton() {
-		
-		boolean buttonValue2;
-		
-		buttonValue2 = OI.operatorJoystick.getRawButton(4);
-		
-		if (buttonValue2 == true) {
-		
-			Servo CameraServo = new Servo(4);
-			
-			CameraServo.set(1.0);
-			
-	}
-	}
 }
 
