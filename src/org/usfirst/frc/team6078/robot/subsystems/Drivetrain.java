@@ -19,6 +19,13 @@ public class Drivetrain {
 	
 	}
 	
+	public static class drivetrainV2 {
+		public static RobotDrive driveLeft = new RobotDrive(RobotMap.frontLeftMotor, RobotMap.backLeftMotor); 
+		
+		public static RobotDrive driveRight = new RobotDrive(RobotMap.frontRightMotor, RobotMap.backRightMotor);
+		
+	}
+	
 	
 	//For auton at the moment, maybe get this working for teleop?
 	public static void alernateDrive(int cet) {

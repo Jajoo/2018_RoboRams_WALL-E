@@ -192,7 +192,12 @@ public class Robot extends IterativeRobot {
 		 
 		while(isOperatorControl() && isEnabled()){
 
-			Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY() / Constants.handicap, OI.operatorJoystick.getX() / Constants.handicap);
+			//Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY() / Constants.handicap, OI.operatorJoystick.getX() / Constants.handicap);
+			
+			//Trying to seperate left and right motors so that I can fix the different speed/voltage problem
+			//What I'm hoping that this does is that it gives the left motor a slight handicap to compensate for the shitty right motors
+			Drivetrain.drivetrainV2.driveLeft.arcadeDrive(OI.operatorJoystick.getY() * 0.8, OI.operatorJoystick.getX() * 0.8);
+			Drivetrain.drivetrainV2.driveRight.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
 			
 		}
