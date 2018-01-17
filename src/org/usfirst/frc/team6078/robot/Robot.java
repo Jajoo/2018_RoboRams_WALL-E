@@ -9,7 +9,6 @@ import org.opencv.imgproc.Imgproc;
 
 //import org.usfirst.frc.team6078.robot.commands.AutonChooser;
 
-import org.usfirst.frc.team6078.robot.commands.*;
 import org.usfirst.frc.team6078.robot.subsystems.Constants;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain;
 
