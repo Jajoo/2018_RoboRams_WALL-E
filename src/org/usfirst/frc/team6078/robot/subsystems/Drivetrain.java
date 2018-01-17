@@ -3,7 +3,10 @@ package org.usfirst.frc.team6078.robot.subsystems;
 import org.usfirst.frc.team6078.robot.RobotMap;
 
 
-import edu.wpi.first.wpilibj.RobotDrive;
+
+//import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+
 import edu.wpi.first.wpilibj.Servo;
 
 import org.usfirst.frc.team6078.robot.*;
@@ -15,14 +18,14 @@ public class Drivetrain {
 	
 	public static class  drivetrainV1 {
 	
-		public static RobotDrive drive = new RobotDrive(RobotMap.frontLeftMotor, RobotMap.frontRightMotor, RobotMap.backLeftMotor, RobotMap.backRightMotor);
+		public static DifferentialDrive drive = new DifferentialDrive(RobotMap.frontLeftMotor, RobotMap.frontRightMotor);
 	
 	}
 	
 	public static class drivetrainV2 {
-		public static RobotDrive driveLeft = new RobotDrive(RobotMap.frontLeftMotor, RobotMap.backLeftMotor); 
+		public static DifferentialDrive driveLeft = new DifferentialDrive(RobotMap.frontLeftMotor, RobotMap.backLeftMotor); 
 		
-		public static RobotDrive driveRight = new RobotDrive(RobotMap.frontRightMotor, RobotMap.backRightMotor);
+		public static DifferentialDrive driveRight = new DifferentialDrive(RobotMap.frontRightMotor, RobotMap.backRightMotor);
 		
 	}
 	
