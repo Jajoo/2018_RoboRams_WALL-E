@@ -8,7 +8,7 @@ public class Constants {
 	public static int backLeftMotorPort = 3; 
 	public static int backRightMotorPort = 2;
 	
-	//Joysticks boi
+	//Joysticks 
 	public static int xboxPort = 0;
 	public static int flightStick = 1;
 	
