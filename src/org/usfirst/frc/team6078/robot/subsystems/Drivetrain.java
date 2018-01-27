@@ -18,7 +18,7 @@ public class Drivetrain {
 	
 	public static class  drivetrainV1 {
 	
-		public static DifferentialDrive drive = new DifferentialDrive(RobotMap.frontLeftMotor, RobotMap.frontRightMotor);
+		public static DifferentialDrive drive = new DifferentialDrive(RobotMap.LeftMotors, RobotMap.RightMotors);
 	
 	}
 	
