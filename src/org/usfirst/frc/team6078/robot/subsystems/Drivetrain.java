@@ -18,7 +18,7 @@ public class Drivetrain {
 	
 	public static class  drivetrainV1 {
 	
-		public static DifferentialDrive drive = new DifferentialDrive(RobotMap.LeftMotors, RobotMap.RightMotors);
+		public static DifferentialDrive drive = new DifferentialDrive(RobotMap.LeftMotors, RobotMap.RightMotor);
 	
 	}
 	
@@ -30,7 +30,7 @@ public class Drivetrain {
 	}
 	
 	
-	//For auton at the moment, maybe get this working for teleop?
+	//For auton at the moment, maybe get this working for teleop? dafd
 	public static void alernateDrive(int cet) {
 			// -----> Don't set cet greater than 1 or less than -1 <--------
 		
