@@ -192,11 +192,10 @@ public class Robot extends IterativeRobot {
 		
 		while(isOperatorControl() && isEnabled());
 			
-
-		
-			//New Drive Function that hopefully works -29/118
-			Drivetrain.drivetrainV1.drive.arcadeDrive (Turbo.yOutPut(), Turbo.xOutPut());
-			
+			//So what this does is have two seperete drive functions, one slow and one fast. 
+			//And it switches between them with a button press. This is if the other branch 
+			//still doesn't update the drive function enough
+			Turbo.radicalDriveSwitcher();
 		}
 		
 
