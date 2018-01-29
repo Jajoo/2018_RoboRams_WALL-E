@@ -192,9 +192,18 @@ public class Robot extends IterativeRobot {
 		
 		while(isOperatorControl() && isEnabled());
 			
+<<<<<<< HEAD
 		
 			//New Drive Function that hopefully works -29/118
 			Drivetrain.drivetrainV1.drive.arcadeDrive (Turbo.yOutPut(), Turbo.xOutPut());
+=======
+			//Trying to seperate left and right motors so that I can fix the different speed/voltage problem
+			//What I'm hoping that this does is that it gives the left motor a slight handicap to compensate for the sucky right motors
+			//Drivetrain.drivetrainV2.driveLeft.arcadeDrive(OI.operatorJoystick.getY() * 0.5, OI.operatorJoystick.getX() * 0.5);
+			//Drivetrain.drivetrainV2.driveRight.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
+			
+			Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
+>>>>>>> 24d4d2d4550806fc8512abf329687d5a8edb19c3
 			
 			
 		}
