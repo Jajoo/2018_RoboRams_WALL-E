@@ -9,7 +9,12 @@ public class Constants {
 	public static int frontRightMotorPort = 2;
 	public static int backLeftMotorPort = 0; 
 	public static int backRightMotorPort = 3;
+	
+	public static int verticalMotorPort = 4;
+	public static int intakeMotorPort1 = 5;
+	public static int intakeMotorPort2 = 6;
 
+	public static int intakeMotorSpeed = 1;
 	
 	//Joysticks 
 	public static int xboxPort = 0;

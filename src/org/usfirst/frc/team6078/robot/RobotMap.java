@@ -24,4 +24,8 @@ public class RobotMap {
 	public static SpeedControllerGroup LeftMotors = new SpeedControllerGroup(frontLeftMotor, backLeftMotor);
 	public static SpeedControllerGroup RightMotors = new SpeedControllerGroup(frontRightMotor, backRightMotor);
 	
+	public static Spark verticalMotor = new Spark(Constants.verticalMotorPort);
+	public static Spark intakeMotor1 = new Spark(Constants.intakeMotorPort1);
+	public static Spark intakeMotor2 = new Spark(Constants.intakeMotorPort2);
+	
 }

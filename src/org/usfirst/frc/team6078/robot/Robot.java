@@ -6,6 +6,7 @@ import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
+import org.usfirst.frc.team6078.robot.subsystems.Arm;
 
 //import org.usfirst.frc.team6078.robot.commands.AutonChooser;
 
@@ -196,6 +197,8 @@ public class Robot extends IterativeRobot {
 			//And it switches between them with a button press. This is if the other branch 
 			//still doesn't update the drive function enough
 			Turbo.radicalDriveSwitcher();
+			
+			Arm.armMover();
 		}
 		
 
