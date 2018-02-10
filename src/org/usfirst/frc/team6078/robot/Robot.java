@@ -149,7 +149,7 @@ public class Robot extends IterativeRobot {
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
 		
-			OI.button1.whileHeld(new Arm());
+			OI.button1.whenPressed(new Arm());
 			
 			
 		

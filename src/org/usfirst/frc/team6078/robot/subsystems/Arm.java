@@ -7,8 +7,9 @@ import static org.usfirst.frc.team6078.robot.RobotMap.RightArmMotor;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 
-public class Arm extends Command {
+public class Arm extends InstantCommand {
 	
     public Arm() {
         super("Arm");
