@@ -15,4 +15,9 @@ public class Constants {
 	//Joystick Handicap
 	public static double handicap = -2;
 	
+	//Arm
+	public static int grabberMotor1 = 5;
+	public static int grabberMotor2 = 6;
+	public static int armMotorPort = 4;
+	
 }

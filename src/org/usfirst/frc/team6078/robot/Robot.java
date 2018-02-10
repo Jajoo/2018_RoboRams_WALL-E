@@ -130,45 +130,10 @@ public class Robot extends IterativeRobot {
 	public void autonomousPeriodic() {
 		//Scheduler.getInstance().run();
 		
-		Drivetrain.alernateDrive(1);
+		//RobotMap.LeftArmMotor.set(1);
+		//RobotMap.RightArmMotor.set(1);
 		
-		try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		Drivetrain.alernateDrive(0);
-		
-		//Dance BOI
-		RobotMap.frontLeftMotor.set(.5);
-		RobotMap.backLeftMotor.set(.5);
-		
-		try {
-			TimeUnit.SECONDS.sleep((long) .5);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		RobotMap.frontLeftMotor.set(0);
-		RobotMap.backLeftMotor.set(0);
-		
-		RobotMap.frontRightMotor.set(.5);
-		RobotMap.backRightMotor.set(.5);
-		
-		try {
-			TimeUnit.SECONDS.sleep((long) .5);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		RobotMap.frontRightMotor.set(0);
-		RobotMap.backRightMotor.set(0);
-		
-	
+		RobotMap.ArmMotor.set(-1);
 	}
 
 	@Override

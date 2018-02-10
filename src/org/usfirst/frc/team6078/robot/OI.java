@@ -17,6 +17,7 @@ public class OI {
 
 	//To drive the bot
 	public static Joystick operatorJoystick = new Joystick(Constants.xboxPort);
+	public static Joystick flightStick = new Joystick(Constants.flightStick);
 	
 	//Splits up X and Y for arcade drive, should half the sensitivity of the Joystick
 	public static double operatorY = operatorJoystick.getY();
