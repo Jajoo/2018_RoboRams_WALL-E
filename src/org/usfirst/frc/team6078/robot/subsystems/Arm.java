@@ -22,7 +22,9 @@ public class Arm extends InstantCommand {
     }
 
     protected void execute() {
-        Drivetrain.ArmDrive(OI.flightStick.getX(),OI.flightStick.getX());
+    	RobotMap.LeftArmMotor.set(1);
+    	RobotMap.RightArmMotor.set(1);
+    	
     }
     protected boolean isFinished () {
         return (true);
