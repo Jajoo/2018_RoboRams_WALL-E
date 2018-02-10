@@ -1,6 +1,7 @@
 package org.usfirst.frc.team6078.robot;
 
 import org.usfirst.frc.team6078.robot.subsystems.Constants;
+import org.usfirst.frc.team6078.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Spark;
@@ -28,4 +29,6 @@ public class RobotMap {
 	public static Spark LeftArmMotor = new Spark(Constants.grabberMotor1);
 	public static Spark RightArmMotor = new Spark(Constants.grabberMotor2);	
 	public static Spark ArmMotor = new Spark(Constants.armMotorPort);
+	
+	public Drivetrain ArmDrive = new Drivetrain();
 }

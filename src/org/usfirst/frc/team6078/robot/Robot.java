@@ -6,6 +6,7 @@ import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
+import org.usfirst.frc.team6078.robot.subsystems.Arm;
 
 //import org.usfirst.frc.team6078.robot.commands.AutonChooser;
 
@@ -29,6 +30,9 @@ import edu.wpi.cscore.MjpegServer;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.wpilibj.CameraServer;
+
+import static org.usfirst.frc.team6078.robot.RobotMap.LeftArmMotor;
+import static org.usfirst.frc.team6078.robot.RobotMap.RightArmMotor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -144,7 +148,15 @@ public class Robot extends IterativeRobot {
 		// this line or comment it out.
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
-	
+		
+			OI.button1.whileHeld(new Arm());
+			
+			
+		
+			
+
+		
+		
 	}
 
 	/**
@@ -166,8 +178,6 @@ public class Robot extends IterativeRobot {
 			Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
 			RobotMap.ArmMotor.set(-OI.flightStick.getY());
-		
-			
 			
 		}
 		

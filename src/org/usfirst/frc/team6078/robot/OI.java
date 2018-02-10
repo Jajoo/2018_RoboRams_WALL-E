@@ -23,4 +23,7 @@ public class OI {
 	public static double operatorY = operatorJoystick.getY();
 	public static double operatorX = operatorJoystick.getX();
 	
+	//button
+	public static Button button1 = new JoystickButton(OI.flightStick, 0);
+	
 }
