@@ -133,8 +133,8 @@ public class Robot extends IterativeRobot {
 		//RobotMap.LeftArmMotor.set(1);
 		//RobotMap.RightArmMotor.set(1);
 		
-		RobotMap.ArmMotor.set(-1);
 	}
+	
 
 	@Override
 	public void teleopInit() {
@@ -164,6 +164,9 @@ public class Robot extends IterativeRobot {
 			//Drivetrain.drivetrainV2.driveRight.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
 			Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
+			
+			RobotMap.ArmMotor.set(-OI.flightStick.getY());
+		
 			
 			
 		}
