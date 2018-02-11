@@ -3,17 +3,14 @@ package org.usfirst.frc.team6078.robot;
 
 import org.opencv.core.Mat;
 
+
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
-import org.usfirst.frc.team6078.robot.subsystems.Arm;
+import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
+import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.Drivetrain;
 
-//import org.usfirst.frc.team6078.robot.commands.AutonChooser;
-
-import org.usfirst.frc.team6078.robot.subsystems.Constants;
-import org.usfirst.frc.team6078.robot.subsystems.Drivetrain;
-
-
+import commands.Intake;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Servo;
@@ -30,9 +27,6 @@ import edu.wpi.cscore.MjpegServer;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.cscore.VideoMode.PixelFormat;
 import edu.wpi.first.wpilibj.CameraServer;
-
-import static org.usfirst.frc.team6078.robot.RobotMap.LeftArmMotor;
-import static org.usfirst.frc.team6078.robot.RobotMap.RightArmMotor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -51,7 +45,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  */
 public class Robot extends IterativeRobot {
 
-	//Don't think we need this but I'm too afraid to remove it so I'm just gonna leave it here -Josh 
 	public static OI oi;
 
 	//Auto autonomous checker
@@ -149,13 +142,7 @@ public class Robot extends IterativeRobot {
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
 		
-			OI.button1.whenPressed(new Arm());
-			
-			
-		
-			
-
-		
+			OI.button1.whenPressed(new Intake());
 		
 	}
 
@@ -177,7 +164,7 @@ public class Robot extends IterativeRobot {
 			
 			Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
-			RobotMap.ArmMotor.set(-OI.flightStick.getY());
+			ArmMotors.lifter.set(-OI.flightStick.getY());
 			
 		}
 		
@@ -203,5 +190,5 @@ public class Robot extends IterativeRobot {
 		
 		
 		
-	}
+}
 

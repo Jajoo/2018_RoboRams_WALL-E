@@ -1,4 +1,4 @@
-package org.usfirst.frc.team6078.robot.subsystems;
+package org.usfirst.frc.team6078.robot;
 
 public class Constants {
 	
@@ -16,8 +16,8 @@ public class Constants {
 	public static double handicap = -2;
 	
 	//Arm
-	public static int grabberMotor1 = 5;
-	public static int grabberMotor2 = 6;
-	public static int armMotorPort = 4;
+	public static int intake1Port = 5;
+	public static int intake2Port = 6;
+	public static int lifterPort = 4;
 	
 }

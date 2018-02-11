@@ -1,17 +1,17 @@
-package org.usfirst.frc.team6078.robot.subsystems;
+package commands;
 
 import org.usfirst.frc.team6078.robot.OI;
-import org.usfirst.frc.team6078.robot.RobotMap;
-import static org.usfirst.frc.team6078.robot.RobotMap.LeftArmMotor;
-import static org.usfirst.frc.team6078.robot.RobotMap.RightArmMotor;
+
+
+import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 
-public class Arm extends InstantCommand {
+public class Intake extends InstantCommand {
 	
-    public Arm() {
+    public Intake() {
         super("Arm");
     }
 
@@ -22,8 +22,8 @@ public class Arm extends InstantCommand {
     }
 
     protected void execute() {
-    	RobotMap.LeftArmMotor.set(1);
-    	RobotMap.RightArmMotor.set(1);
+    	ArmMotors.intakeMotor1.set(1);
+    	ArmMotors.intakeMotor2.set(1);
     	
     }
     protected boolean isFinished () {
