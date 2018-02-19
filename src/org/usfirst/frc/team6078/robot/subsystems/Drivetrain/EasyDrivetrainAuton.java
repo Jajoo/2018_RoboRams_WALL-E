@@ -9,8 +9,10 @@ public class EasyDrivetrainAuton {
 		//Drivetrain
 		if (direction == "straight") {
 		
-			DrivetrainMotors.LeftMotors.set(speed);
-			DrivetrainMotors.RightMotors.set(speed);
+			DrivetrainMotors.frontLeftMotor.set(speed);
+			DrivetrainMotors.backLeftMotor.set(speed);
+			DrivetrainMotors.frontRightMotor.set(-speed);
+			DrivetrainMotors.backRightMotor.set(-speed);
 			
 			try {
 				TimeUnit.SECONDS.sleep(time);
@@ -19,14 +21,18 @@ public class EasyDrivetrainAuton {
 				e.printStackTrace();
 			}
 			
-			DrivetrainMotors.LeftMotors.set(0);
-			DrivetrainMotors.RightMotors.set(0);
+			DrivetrainMotors.frontLeftMotor.set(0);
+			DrivetrainMotors.backLeftMotor.set(0);
+			DrivetrainMotors.frontRightMotor.set(0);
+			DrivetrainMotors.backRightMotor.set(0);
 		}
 		
 		if (direction == "left") {
 			
-			DrivetrainMotors.LeftMotors.set(speed);
-			DrivetrainMotors.RightMotors.set(-speed);
+			DrivetrainMotors.frontLeftMotor.set(-speed);
+			DrivetrainMotors.backLeftMotor.set(-speed);
+			DrivetrainMotors.frontRightMotor.set(-speed);
+			DrivetrainMotors.backRightMotor.set(-speed);
 			
 			try {
 				TimeUnit.SECONDS.sleep(time);
@@ -35,14 +41,18 @@ public class EasyDrivetrainAuton {
 				e.printStackTrace();
 			}
 			
-			DrivetrainMotors.LeftMotors.set(0);
-			DrivetrainMotors.RightMotors.set(0);
-		}
+			DrivetrainMotors.frontLeftMotor.set(0);
+			DrivetrainMotors.backLeftMotor.set(0);
+			DrivetrainMotors.frontRightMotor.set(0);
+			DrivetrainMotors.backRightMotor.set(0);
+		}	
 		
 		if (direction == "right") {
 			
-			DrivetrainMotors.LeftMotors.set(-speed);
-			DrivetrainMotors.RightMotors.set(speed);
+			DrivetrainMotors.frontLeftMotor.set(speed);
+			DrivetrainMotors.backLeftMotor.set(speed);
+			DrivetrainMotors.frontRightMotor.set(speed);
+			DrivetrainMotors.backRightMotor.set(speed);
 			
 			try {
 				TimeUnit.SECONDS.sleep(time);
@@ -51,8 +61,10 @@ public class EasyDrivetrainAuton {
 				e.printStackTrace();
 			}
 			
-			DrivetrainMotors.LeftMotors.set(0);
-			DrivetrainMotors.RightMotors.set(0);
+			DrivetrainMotors.frontLeftMotor.set(-speed);
+			DrivetrainMotors.backLeftMotor.set(-speed);
+			DrivetrainMotors.frontRightMotor.set(speed);
+			DrivetrainMotors.backRightMotor.set(speed);
 		}
 		
 	}

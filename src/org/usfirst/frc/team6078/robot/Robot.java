@@ -10,6 +10,7 @@ import org.opencv.imgproc.Imgproc;
 import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
 import org.usfirst.frc.team6078.robot.subsystems.Arm.EasyArmAuton;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.Drivetrain;
+import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.DrivetrainMotors;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.EasyDrivetrainAuton;
 
 import commands.Intake;
@@ -116,21 +117,17 @@ public class Robot extends IterativeRobot {
 		 * autonomousCommand = new ExampleCommand(); break; }
 		 */
 
-		// schedule the autonomous command (example)
+		// schedule the autonomous	  command (example)
 		if (autonomousCommand != null)
 			autonomousCommand.start();
-
-			EasyDrivetrainAuton.easyAuton(.5, "straight", 1);
+		
+			//EasyDrivetrainAuton.easyAuton(.5, "straight", 2);
+			EasyDrivetrainAuton.easyAuton(.5, "right", 2);
+			//EasyDrivetrainAuton.easyAuton(.5, "straight", 2);
 			
-			try {
-				TimeUnit.SECONDS.sleep(1.5);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			//EasyArmAuton.easyIntakeAuton(-1, 1);
 			
-			EasyArmAuton.easyArmAuton(.5, 1);
-			EasyArmAuton.easyIntakeAuton(1, 1);
+			//EasyArmAuton.easyArmAuton(.8, 1);
 	}
 	
 
@@ -169,7 +166,7 @@ public class Robot extends IterativeRobot {
 		 
 		while(isOperatorControl() && isEnabled()){
 			
-			Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
+			Drivetrain.drivetrainV1.drive.arcadeDrive(-OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
 			ArmMotors.intakeMotor1.set(-OI.flightStick.getRawAxis(3));
 	    	ArmMotors.intakeMotor2.set(OI.flightStick.getRawAxis(3));
