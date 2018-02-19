@@ -8,7 +8,9 @@ import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
+import org.usfirst.frc.team6078.robot.subsystems.Arm.EasyArmAuton;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.Drivetrain;
+import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.EasyDrivetrainAuton;
 
 import commands.Intake;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -118,7 +120,19 @@ public class Robot extends IterativeRobot {
 		if (autonomousCommand != null)
 			autonomousCommand.start();
 
+			EasyDrivetrainAuton.easyAuton(.5, "straight", 1);
+			
+			try {
+				TimeUnit.SECONDS.sleep(1.5);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			EasyArmAuton.easyArmAuton(.5, 1);
+			EasyArmAuton.easyIntakeAuton(1, 1);
 	}
+	
 
 	/**
 	 * This function is called periodically during autonomous
@@ -143,7 +157,6 @@ public class Robot extends IterativeRobot {
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
 		
-			OI.button1.whileActive(new Intake());
 					
 	}
 
@@ -161,7 +174,7 @@ public class Robot extends IterativeRobot {
 			ArmMotors.intakeMotor1.set(-OI.flightStick.getRawAxis(3));
 	    	ArmMotors.intakeMotor2.set(OI.flightStick.getRawAxis(3));
 			
-			ArmMotors.lifter.set(-OI.flightStick.getY());
+			ArmMotors.lifter.set(OI.flightStick.getY());
 			
 		}
 		
