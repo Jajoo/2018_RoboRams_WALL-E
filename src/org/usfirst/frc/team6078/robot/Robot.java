@@ -138,12 +138,13 @@ public class Robot extends IterativeRobot {
 		// This makes sure that the autonomous stops running when
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
+		
 		// this line or comment it out.
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
 		
-			OI.button1.whenPressed(new Intake());
-		
+			OI.button1.whileActive(new Intake());
+					
 	}
 
 	/**
@@ -154,15 +155,11 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 		 
 		while(isOperatorControl() && isEnabled()){
-
-			//Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY() / Constants.handicap, OI.operatorJoystick.getX() / Constants.handicap);
-			
-			//Trying to seperate left and right motors so that I can fix the different speed/voltage problem
-			//What I'm hoping that this does is that it gives the left motor a slight handicap to compensate for the sucky right motors
-			//Drivetrain.drivetrainV2.driveLeft.arcadeDrive(OI.operatorJoystick.getY() * 0.5, OI.operatorJoystick.getX() * 0.5);
-			//Drivetrain.drivetrainV2.driveRight.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
 			Drivetrain.drivetrainV1.drive.arcadeDrive(OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
+			
+			ArmMotors.intakeMotor1.set(-OI.flightStick.getRawAxis(3));
+	    	ArmMotors.intakeMotor2.set(OI.flightStick.getRawAxis(3));
 			
 			ArmMotors.lifter.set(-OI.flightStick.getY());
 			
@@ -172,7 +169,7 @@ public class Robot extends IterativeRobot {
 			
 		
 
-	//}
+
 
 	/**
 	 * This function is called periodically during test mode
