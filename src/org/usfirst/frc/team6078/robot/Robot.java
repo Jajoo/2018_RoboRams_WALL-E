@@ -1,43 +1,17 @@
 //this is a test
 package org.usfirst.frc.team6078.robot;
 
-import org.opencv.core.Mat;
-
-
-import org.opencv.core.Point;
-import org.opencv.core.Scalar;
-import org.opencv.imgproc.Imgproc;
 import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
-import org.usfirst.frc.team6078.robot.subsystems.Arm.EasyArmAuton;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.Drivetrain;
-import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.DrivetrainMotors;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.EasyDrivetrainAuton;
 
-import commands.Intake;
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-//Not sure why this is commented out but it works so...
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.cscore.CvSink;
-import edu.wpi.cscore.CvSource;
-import edu.wpi.cscore.MjpegServer;
-import edu.wpi.cscore.UsbCamera;
-import edu.wpi.cscore.VideoMode.PixelFormat;
-import edu.wpi.first.wpilibj.CameraServer;
-
-import java.util.concurrent.TimeUnit;
-
-import org.opencv.core.Core;
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
-import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.IterativeRobot;
 
 /**
  * The VM is configured to automatically run this class, Eand to call the
