@@ -121,13 +121,14 @@ public class Robot extends IterativeRobot {
 		if (autonomousCommand != null)
 			autonomousCommand.start();
 		
-			//EasyDrivetrainAuton.easyAuton(.5, "straight", 2);
-			EasyDrivetrainAuton.easyAuton(.5, "right", 2);
+			//EasyDrivetrainAuton.easyAuton(1, "straight", 2);                                    
+			//EasyDrivetrainAuton.easyAuton(.5, "right", 2);
 			//EasyDrivetrainAuton.easyAuton(.5, "straight", 2);
 			
 			//EasyArmAuton.easyIntakeAuton(-1, 1);
 			
 			//EasyArmAuton.easyArmAuton(.8, 1);
+
 	}
 	
 
@@ -141,6 +142,24 @@ public class Robot extends IterativeRobot {
 		//RobotMap.LeftArmMotor.set(1);
 		//RobotMap.RightArmMotor.set(1);
 		
+		//DrivetrainMotors.frontLeftMotor.set(.25);
+		//DrivetrainMotors.frontRightMotor.set(.25);
+		
+		//DrivetrainMotors.backLeftMotor.set(.25);
+		//DrivetrainMotors.backRightMotor.set(.25);
+	
+		//try {
+			//TimeUnit.SECONDS.sleep(1);
+		//} catch (InterruptedException e) {
+			//TODO Auto-generated catch block
+			//e.printStackTrace();
+		//}
+
+		//DrivetrainMotors.frontLeftMotor.set(1);
+		//DrivetrainMotors.frontRightMotor.set(0);
+		
+		//DrivetrainMotors.backLeftMotor.set(0);
+		//DrivetrainMotors.backRightMotor.set(1);
 	}
 	
 
@@ -170,7 +189,7 @@ public class Robot extends IterativeRobot {
 			
 			ArmMotors.intakeMotor1.set(-OI.flightStick.getRawAxis(3));
 	    	ArmMotors.intakeMotor2.set(OI.flightStick.getRawAxis(3));
-			
+				
 			ArmMotors.lifter.set(OI.flightStick.getY());
 			
 		}
@@ -196,6 +215,6 @@ public class Robot extends IterativeRobot {
 		
 		
 		
-		
+
 }
 
