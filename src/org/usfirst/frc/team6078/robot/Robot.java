@@ -2,14 +2,14 @@
 package org.usfirst.frc.team6078.robot;
 
 import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
+import org.usfirst.frc.team6078.robot.subsystems.Arm.Intake;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.Drivetrain;
+import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.EasyDrivetrainAuton;
 
-import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 /**
@@ -41,9 +41,9 @@ public class Robot extends IterativeRobot {
 		
       		
 		//Enables Camera 0 on SmartDashboard
-		UsbCamera Cam0 = new UsbCamera ("Cam0" , 0);
-		CameraServer.getInstance().startAutomaticCapture(Cam0);
-        Cam0.setResolution(1080, 720);
+		//UsbCamera Cam0 = new UsbCamera ("Cam0" , 0);
+		CameraServer.getInstance().startAutomaticCapture(0);
+        //Cam0.setResolution(1080, 720);
 		        
         //Enables another Camera lets see if this works
         //UsbCamera Cam1 = new UsbCamera ("Cam1", 0);
@@ -94,12 +94,16 @@ public class Robot extends IterativeRobot {
 		if (autonomousCommand != null)
 			autonomousCommand.start();
 		
-			//EasyDrivetrainAuton.easyAuton(1, "straight", 2);                                    
-			//EasyDrivetrainAuton.easyAuton(.5, "right", 2);
-			//EasyDrivetrainAuton.easyAuton(.5, "straight", 2);
-			
+			EasyDrivetrainAuton.easyAuton(1, "straight", 2);                                    
+			EasyDrivetrainAuton.easyAuton(.5, "right", 2);
+			//EasyDrivetrainAuton.easyAuton(1, "straight", 1);
+			//EasyArmAuton.easyIntakeAuton(1, 3);
+		
+		//DIFERENT CODE THIS IS A BARRIER
+		
 			//EasyArmAuton.easyIntakeAuton(-1, 1);
-			
+			//KEY for auton below so we know what each number represents:
+			//EasyDrivetrainAuton.easyAuton(speed, direction, time);
 			//EasyArmAuton.easyArmAuton(.8, 1);
 
 	}
@@ -111,6 +115,9 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
+		
+		//EasyDrivetrainAuton.easyAuton(1, "straight", 2);                                    
+		//EasyDrivetrainAuton.easyAuton(.5, "right", 2);
 		
 		}
 	
@@ -137,10 +144,13 @@ public class Robot extends IterativeRobot {
 		 
 		while(isOperatorControl() && isEnabled()){
 			
+			//ArmMotors.intakeMotor1.set(1);
+			
+			Intake.intakeFunction();
+			
 			Drivetrain.drivetrainV1.drive.arcadeDrive(-OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
 			ArmMotors.intakeMotor1.set(-OI.flightStick.getRawAxis(3));
-	    	ArmMotors.intakeMotor2.set(OI.flightStick.getRawAxis(3));
 				
 			ArmMotors.lifter.set(OI.flightStick.getY());
 			

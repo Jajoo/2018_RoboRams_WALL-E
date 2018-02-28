@@ -7,8 +7,7 @@ import edu.wpi.first.wpilibj.Spark;
 public class ArmMotors {
 
 	//Intake Motors
-	public static Spark intakeMotor1 = new Spark(Constants.intake1Port);
-	public static Spark intakeMotor2= new Spark(Constants.intake2Port);	
+	public static Spark intakeMotor1 = new Spark(Constants.intakePort);	
 	
 	//Lifter
 	public static Spark lifter = new Spark(Constants.lifterPort);

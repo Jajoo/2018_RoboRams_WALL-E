@@ -22,7 +22,6 @@ public class EasyArmAuton {
 	public static void easyIntakeAuton (double speed, long time) {
 		
 		ArmMotors.intakeMotor1.set(-speed);
-		ArmMotors.intakeMotor2.set(speed);
 		
 		try {
 			TimeUnit.SECONDS.sleep(time);
@@ -32,6 +31,5 @@ public class EasyArmAuton {
 		}
 		
 		ArmMotors.intakeMotor1.set(0);
-		ArmMotors.intakeMotor2.set(0);
 	}
 }

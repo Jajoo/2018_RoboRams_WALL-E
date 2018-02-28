@@ -16,8 +16,7 @@ public class Constants {
 	public static double handicap = -2;
 	
 	//Arm
-	public static int intake1Port = 5;
-	public static int intake2Port = 6;
-	public static int lifterPort = 4;
+	public static int intakePort = 7;
+	public static int lifterPort = 5;
 	
 }
