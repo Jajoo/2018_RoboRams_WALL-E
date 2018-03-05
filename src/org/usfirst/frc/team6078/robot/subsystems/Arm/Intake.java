@@ -2,23 +2,27 @@ package org.usfirst.frc.team6078.robot.subsystems.Arm;
 
 import org.usfirst.frc.team6078.robot.OI;
 
-public class Intake {
-	
-	public static void intakeFunction() {
-		
-		boolean intakeBoolean;
-    	
-    	if (OI.flightStick.getRawAxis(3) > 0) {
-    		
-    		ArmMotors.intakeMotor1.set(0);
-    	}
-    	
-    	if (OI.flightStick.getRawAxis(3) < 0) {
-    		
-    		ArmMotors.intakeMotor1.set(1);
-    	}
-    	
+import edu.wpi.first.wpilibj.command.Command;
 
-	}
+public class Intake extends Command {
 
+    public Intake() {
+    	super("Intake");
+   
+    }
+
+    protected void initialize() {
+    }
+
+    protected void execute() {
+    	
+    	ArmMotors.intakeMotor1.set(1);
+    	
+    }
+
+    // Make this return true when this Command no longer needs to run execute()
+    protected boolean isFinished() {
+        return false;
+    }
 }
+

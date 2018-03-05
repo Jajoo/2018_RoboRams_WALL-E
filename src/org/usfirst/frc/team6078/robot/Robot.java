@@ -1,7 +1,8 @@
 //this is a test
 package org.usfirst.frc.team6078.robot;
 
-import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
+import org.usfirst.frc.team6078.robot.subsystems.Arm.Arm;
+//import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
 import org.usfirst.frc.team6078.robot.subsystems.Arm.Intake;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.Drivetrain;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.EasyDrivetrainAuton;
@@ -146,13 +147,13 @@ public class Robot extends IterativeRobot {
 			
 			//ArmMotors.intakeMotor1.set(1);
 			
-			Intake.intakeFunction();
+			OI.button1.whenPressed(new Intake());
+			
 			
 			Drivetrain.drivetrainV1.drive.arcadeDrive(-OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
-			ArmMotors.intakeMotor1.set(-OI.flightStick.getRawAxis(3));
-				
-			ArmMotors.lifter.set(OI.flightStick.getY());
+			Arm.ArmMotorFunctions();
+			
 			
 		}
 		

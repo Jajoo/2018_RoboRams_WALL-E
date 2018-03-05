@@ -26,16 +26,6 @@ public class OI {
 	//button
 	public static Button button1 = new JoystickButton(OI.flightStick, 0);
 	public static Button button2 = new JoystickButton(OI.flightStick, 1);
-
-	//Maybe help for buttons on Flight stick
-	public static double button1() {
-		// TODO Auto-generated method stub
-		return 0.7;
-	}
 	
-	public static double button2() {
-		// TODO Auto-generated method stub
-		return 0.7;
-	}
 	
 }
