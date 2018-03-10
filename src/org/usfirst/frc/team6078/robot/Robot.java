@@ -2,6 +2,7 @@
 package org.usfirst.frc.team6078.robot;
 
 import org.usfirst.frc.team6078.robot.subsystems.Arm.Arm;
+import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
 //import org.usfirst.frc.team6078.robot.subsystems.Arm.ArmMotors;
 import org.usfirst.frc.team6078.robot.subsystems.Arm.Intake;
 import org.usfirst.frc.team6078.robot.subsystems.Drivetrain.Drivetrain;
@@ -145,10 +146,7 @@ public class Robot extends IterativeRobot {
 		 
 		while(isOperatorControl() && isEnabled()){
 			
-			//ArmMotors.intakeMotor1.set(1);
-			
-			OI.button1.whenPressed(new Intake());
-			
+			Intake.IntakeFunctions();
 			
 			Drivetrain.drivetrainV1.drive.arcadeDrive(-OI.operatorJoystick.getY(), OI.operatorJoystick.getX());
 			
