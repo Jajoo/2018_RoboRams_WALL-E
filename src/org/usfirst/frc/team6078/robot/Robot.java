@@ -152,7 +152,7 @@ public class Robot extends IterativeRobot {
 			
 			Arm.ArmMotorFunctions();
 			
-			
+			//add in shedule 
 		}
 		
 	}

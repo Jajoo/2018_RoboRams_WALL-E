@@ -6,8 +6,7 @@ public class Arm {
 
 	public static void ArmMotorFunctions () {
 		
-		ArmMotors.intakeMotor1.set(-OI.flightStick.getRawAxis(3));
-		
 		ArmMotors.lifter.set(OI.flightStick.getY());
+		
 	}
 }

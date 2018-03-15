@@ -6,7 +6,7 @@ public class Intake {
 
 	public static void IntakeFunctions () {
 	
-	if (OI.flightStick.getRawButton(5)) {
+	if (OI.flightStick.getRawButton(1)) {
 		
 		ArmMotors.intakeMotor1.set(1);
 		
@@ -14,8 +14,8 @@ public class Intake {
 	else {
 		
 		ArmMotors.intakeMotor1.set(0);
-	}
-	
+		}
+		
 	}
 
 }
