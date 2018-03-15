@@ -118,8 +118,8 @@ public class Robot extends IterativeRobot {
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
 		
-		//EasyDrivetrainAuton.easyAuton(1, "straight", 2);                                    
-		//EasyDrivetrainAuton.easyAuton(.5, "right", 2);
+		EasyDrivetrainAuton.autonOutOfNames();
+		
 		
 		}
 	
@@ -152,7 +152,7 @@ public class Robot extends IterativeRobot {
 			
 			Arm.ArmMotorFunctions();
 			
-			//add in shedule 
+			//add in scedule if want commands
 		}
 		
 	}
