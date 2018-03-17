@@ -58,7 +58,7 @@ public class Robot extends IterativeRobot {
         //Cam1.setResolution(1080, 720);
 		
 		//Compressor To turn on when the robot is initiated 
-		OI.mainCompressor.start();
+		//OI.mainCompressor.start();
 		
 	}
 
@@ -147,7 +147,7 @@ public class Robot extends IterativeRobot {
 		while(isOperatorControl() && isEnabled()){
 			
 			//Intake Functions
-			Intake.IntakeFunctions();
+			//Intake.IntakeFunctions();
 			
 			//Driving Functions
 			Drivetrain.weBackwardsNowBois();
