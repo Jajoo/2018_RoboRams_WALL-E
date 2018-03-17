@@ -14,10 +14,10 @@ public class EasyDrivetrainAuton {
 		//Drivetrain
 		if (direction == "straight") {
 		
-			DrivetrainMotors.frontLeftMotor.set(speed);
-			DrivetrainMotors.backLeftMotor.set(speed);
-			DrivetrainMotors.frontRightMotor.set(-speed);
-			DrivetrainMotors.backRightMotor.set(-speed);
+			DrivetrainMotors.frontLeftMotor.set(-speed);
+			DrivetrainMotors.backLeftMotor.set(-speed);
+			DrivetrainMotors.frontRightMotor.set(speed);
+			DrivetrainMotors.backRightMotor.set(speed);
 			
 			try {
 				TimeUnit.SECONDS.sleep(time);
@@ -74,40 +74,5 @@ public class EasyDrivetrainAuton {
 		
 	}
 	
-	
-	//This should be somewhere else. Not sure where, but not here lol
-	public static void autonOutOfNames() {
-		
-		String gameData;
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-          if(gameData.length() > 0){
-        	  
-        	//Put left Auto code here  
-        	  if(gameData.charAt(0) == 'L'){
-			  
-        		  easyAuton(.7, "forward", 3);
-        		  easyAuton(.6, "left", 1);
-        		  
-        		  EasyArmAuton.easyArmAuton(.5, 1);
-        		  
-        		  easyAuton(.7, "forward", 2);
-        	  } 
-        	  //Put Right Auto code here
-        	  if(gameData.charAt(0) == 'R') {
-
-        		  easyAuton(.7, "forward", 3);
-        		  easyAuton(.6, "right", 1);
-        		  
-        		  EasyArmAuton.easyArmAuton(.5, 1);
-        		  
-        		  easyAuton(.4, "forward", 2);  
-        	  }
-        	  
-        	  else {
-        		  
-        		  easyAuton(.7, "forward", 3);
-        	  }
-          }
-		}
 
 }

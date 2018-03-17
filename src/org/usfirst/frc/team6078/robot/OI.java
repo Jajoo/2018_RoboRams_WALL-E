@@ -1,7 +1,9 @@
 package org.usfirst.frc.team6078.robot;
 
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
-
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -23,9 +25,9 @@ public class OI {
 	public static double operatorY = operatorJoystick.getY();
 	public static double operatorX = operatorJoystick.getX();
 	
-	//button
-	public static Button button1 = new JoystickButton(OI.flightStick, 0);
-	public static Button button2 = new JoystickButton(OI.flightStick, 1);
+	//Pneumatics
+	public static Compressor mainCompressor = new Compressor (1);
+	public static DoubleSolenoid piston1extract = new DoubleSolenoid (0, 1);
 	
 	
 	
